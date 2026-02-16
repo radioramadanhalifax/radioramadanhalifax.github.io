@@ -4,33 +4,70 @@
   <title>Ramadan Radio Halifax</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Background & text */
     body {
-      background: black;
-      color: white;
+      background: #0b0c10; /* dark night color */
+      color: #f5d547; /* Ramadan gold */
+      font-family: 'Arial', sans-serif;
       text-align: center;
-      font-family: Arial, sans-serif;
-      padding-top: 100px;
+      padding-top: 80px;
     }
-    h1 { font-size: 40px; margin-bottom: 20px; }
-    p { margin-top: 20px; font-size: 18px; }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #f5d547;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* ON AIR Indicator */
+    .on-air {
+      display: inline-block;
+      font-weight: bold;
+      color: #ff4c4c;
+      font-size: 18px;
+      margin-bottom: 20px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    /* Player container */
+    .player-container {
+      display: inline-block;
+      padding: 20px;
+      background: #1f2833;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #f5d547;
+    }
   </style>
 </head>
 <body>
 
 <h1>Ramadan Radio Halifax</h1>
+<div class="on-air">● ON AIR</div>
 <p>Listen Live</p>
 
-<!-- ShoutStream Player -->
-<script src="https://shoutstream.co.uk/player-min.js"></script>
-<script id="radioFloPlayer">
-radioFloPlayer.embed({
-  'url': 'https://s2.free-shoutcast.com/stream/18066',
-  'station-name': 'Radio Ramadan Halifax 88 FM',
-  'autoplay': true,
-  'skin': 'dark',
-  'width': 300
-});
-</script>
+<div class="player-container">
+  <!-- ShoutStream Player -->
+  <script src="https://shoutstream.co.uk/player-min.js"></script>
+  <script id="radioFloPlayer">
+  radioFloPlayer.embed({
+    'url': 'https://s2.free-shoutcast.com/stream/18066',
+    'station-name': 'Radio Ramadan Halifax 88 FM',
+    'autoplay': true,
+    'skin': 'dark',
+    'width': 300
+  });
+  </script>
+</div>
 
 </body>
 </html>
