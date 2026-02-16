@@ -12,7 +12,6 @@
       padding-top: 100px;
     }
     h1 { font-size: 40px; margin-bottom: 20px; }
-    iframe { border: none; width: 400px; height: 300px; }
     p { margin-top: 20px; font-size: 18px; }
   </style>
 </head>
@@ -21,8 +20,17 @@
 <h1>Ramadan Radio Halifax</h1>
 <p>Listen Live</p>
 
-<!-- Embed the Listen2MyRadio HTTPS player -->
-<iframe src="https://radioramadanhalifax.radio12345.com/" allow="autoplay"></iframe>
+<!-- ShoutStream Player -->
+<script src="https://shoutstream.co.uk/player-min.js"></script>
+<script id="radioFloPlayer">
+radioFloPlayer.embed({
+  'url': 'https://s2.free-shoutcast.com/stream/18066',
+  'station-name': 'Radio Ramadan Halifax 88 FM',
+  'autoplay': true,
+  'skin': 'dark',
+  'width': 300
+});
+</script>
 
 </body>
 </html>
