@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: #4b0082; /* Purple */
+      background: #4b0082;
       color: #f5d547;
       font-family: Arial, sans-serif;
       text-align: center;
@@ -44,30 +44,48 @@
       background: #2e0854;
       border-radius: 15px;
       box-shadow: 0 0 15px #f5d547;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+    }
+
+    /* Gold divider line */
+    .gold-line {
+      width: 70%;
+      height: 2px;
+      background: #f5d547;
+      margin: 25px auto;
+      border-radius: 2px;
     }
 
     /* Logos section */
     .logo-container {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 15px;
-      padding: 20px;
-      flex-wrap: nowrap;
+      align-items: center; /* vertical alignment */
+      gap: 20px;
+      padding: 10px 20px;
     }
 
     .logo-container img {
-      width: 120px;
-      max-width: 40%;
-      height: auto;
+      height: 80px;   /* same vertical size */
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Sponsored text */
+    .sponsored {
+      margin-top: 15px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #ffffff;
+      opacity: 0.9;
     }
 
     @media (max-width: 480px) {
       .logo-container img {
-        width: 100px;
+        height: 65px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -89,10 +107,15 @@
   </script>
 </div>
 
-<!-- Logos -->
+<div class="gold-line"></div>
+
 <div class="logo-container">
   <img src="SH.png" alt="S & H Architects Logo">
   <img src="eye.jpg" alt="The Eye Dr Logo">
+</div>
+
+<div class="sponsored">
+  Sponsored By
 </div>
 
 </body>
