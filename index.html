@@ -5,18 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: #4b0082;
+      margin: 0;
+      background: linear-gradient(135deg, #4b0082, #2e0854);
       color: #f5d547;
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 60px;
-      margin: 0;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(15px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     h1 {
       font-size: 32px;
       margin-bottom: 10px;
-      text-shadow: 0 0 10px #f5d547;
+      text-shadow: 0 0 12px #f5d547;
     }
 
     p {
@@ -34,55 +40,81 @@
     }
 
     @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
+      0%,50%,100% {opacity:1;}
+      25%,75% {opacity:0;}
     }
 
     .player-container {
       display: inline-block;
-      padding: 15px;
-      background: #2e0854;
-      border-radius: 15px;
-      box-shadow: 0 0 15px #f5d547;
-      margin-bottom: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      box-shadow: 0 0 20px rgba(245,213,71,0.4);
+      margin-bottom: 35px;
     }
 
-    /* Gold divider line */
+    /* Animated gold divider */
     .gold-line {
-      width: 70%;
-      height: 2px;
-      background: #f5d547;
-      margin: 25px auto;
-      border-radius: 2px;
+      width: 75%;
+      height: 3px;
+      margin: 30px auto;
+      border-radius: 3px;
+      background: linear-gradient(90deg, transparent, #f5d547, transparent);
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
     }
 
-    /* Logos section */
+    @keyframes shimmer {
+      from {background-position: -200% 0;}
+      to {background-position: 200% 0;}
+    }
+
+    /* Sponsor glass panel */
+    .sponsor-panel {
+      width: 90%;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      padding: 25px 15px;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(245,213,71,0.3);
+    }
+
     .logo-container {
       display: flex;
       justify-content: center;
-      align-items: center; /* vertical alignment */
-      gap: 20px;
-      padding: 10px 20px;
+      align-items: center;
+      gap: 35px;
+      margin-bottom: 20px;
     }
 
     .logo-container img {
-      height: 80px;   /* same vertical size */
+      height: 120px;
       width: auto;
       object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(245,213,71,0.5));
+      transition: transform 0.3s ease;
     }
 
-    /* Sponsored text */
+    .logo-container img:hover {
+      transform: scale(1.05);
+    }
+
     .sponsored {
-      margin-top: 15px;
-      font-size: 14px;
+      font-size: 32px;
+      text-shadow: 0 0 12px #f5d547;
       letter-spacing: 2px;
-      color: #ffffff;
-      opacity: 0.9;
     }
 
     @media (max-width: 480px) {
+      h1, .sponsored {
+        font-size: 26px;
+      }
+
       .logo-container img {
-        height: 65px;
+        height: 90px;
       }
     }
 
@@ -96,7 +128,7 @@
 
 <div class="player-container">
   <script src="https://shoutstream.co.uk/player-min.js"></script>
-  <script id="radioFloPlayer">
+  <script>
   radioFloPlayer.embed({
     'url': 'https://s2.free-shoutcast.com/stream/18066',
     'station-name': 'Radio Ramadan Halifax 88 FM',
@@ -109,13 +141,12 @@
 
 <div class="gold-line"></div>
 
-<div class="logo-container">
-  <img src="SH.png" alt="S & H Architects Logo">
-  <img src="eye.jpg" alt="The Eye Dr Logo">
-</div>
-
-<div class="sponsored">
-  Sponsored By
+<div class="sponsor-panel">
+  <div class="logo-container">
+    <img src="SH.png" alt="S & H Architects Logo">
+    <img src="eye.jpg" alt="The Eye Dr Logo">
+  </div>
+  <div class="sponsored">Sponsored By</div>
 </div>
 
 </body>
